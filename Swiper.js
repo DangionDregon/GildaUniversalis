@@ -50,7 +50,7 @@ class Swiper {
       } else {
         this.changeCurrentSlide(this.currentIndex+1);
       }
-    } else { // Ripristina la posizione se il movimento non è abbastanza lungo
+    }// Ripristina la posizione se il movimento non è abbastanza lungo
       this.translateSlides(0);
     }, "1000");
   }
