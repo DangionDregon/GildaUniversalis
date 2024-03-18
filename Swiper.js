@@ -43,16 +43,14 @@ class Swiper {
   }
 
   handleTouchEnd() {
-	  setTimeout(() => {
-  		if (Math.abs(this.touchDistance) > 50) { // Consideriamo un movimento significativo
-      if (this.touchDistance > 0) {
-        this.changeCurrentSlide(this.currentIndex-1);
-      } else {
-        this.changeCurrentSlide(this.currentIndex+1);
-      }
-    }// Ripristina la posizione se il movimento non è abbastanza lungo
-      this.translateSlides(0);
-    }, "1000");
+	  if (Math.abs(this.touchDistance) > 50) { // Consideriamo un movimento significativo
+      	if (this.touchDistance > 0) {
+        	this.changeCurrentSlide(this.currentIndex-1);
+      	} else {
+        	this.changeCurrentSlide(this.currentIndex+1);
+      	}
+	}// Ripristina la posizione se il movimento non è abbastanza lungo
+    this.translateSlides(0);
   }
   
   changeCurrentSlide(newIndex) {
