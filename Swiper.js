@@ -43,7 +43,8 @@ class Swiper {
   }
 
   handleTouchEnd() {
-    if (Math.abs(this.touchDistance) > 50) { // Consideriamo un movimento significativo
+	  setTimeout(() => {
+  		if (Math.abs(this.touchDistance) > 50) { // Consideriamo un movimento significativo
       if (this.touchDistance > 0) {
         this.changeCurrentSlide(this.currentIndex-1);
       } else {
@@ -51,7 +52,7 @@ class Swiper {
       }
     } else { // Ripristina la posizione se il movimento non è abbastanza lungo
       this.translateSlides(0);
-    }
+    }, "1000");
   }
   
   changeCurrentSlide(newIndex) {
