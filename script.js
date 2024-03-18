@@ -15,7 +15,7 @@ function calculateExperience() {
     
     const exp_session = [300,600,1200,1700,3500,4000,5000,6000,7500,9000,10500,11500,13500,15000,18000,20000,25000,27000,30000,40000];
     
-    var esperienza_max = avventurieri * sessioni * exp_session;
+    var esperienza_max = avventurieri * sessioni * exp_session[livello-1];
     document.getElementById('result').innerHTML = `
         <label for="esperienzaMissione">Esperienza missione:</label>
         <input type="number" id="esperienzaMissione" name="esperienzaMissione" required>
