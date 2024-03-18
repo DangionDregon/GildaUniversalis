@@ -59,8 +59,19 @@ function calculatePercentage() {
     const gold_rate = [0.033, 0.033, 0.033, 0.034, 0.035, 0.036, 0.036, 0.036, 0.037, 0.038, 0.04, 0.045, 0.05, 0.055, 0.06, 0.07, 0.08, 0.09, .1, .1];
     
     
-    document.getElementById('statistiche').innerHTML = `
-        <label for="row"> Percentuale difficoltà | Rating Oggetti | Oro <\label> <br>
-        <label for="values"> ${percentage}% | ${sessioni*livello*percentage/100} | ${gold_rate[livello-1]*avventurieri*esperienzaMissione} <\label>
+    const rowHTML = `
+        <table>
+            <tr>
+                <th>Percentuale difficoltà</th>
+                <th>Rating Oggetti</th>
+                <th>Oro</th>
+            </tr>
+            <tr>
+                <td>${percentage.toFixed(2)}%</td>
+                <td>${(sessioni * livello * percentage / 100).toFixed(0)}</td>
+                <td>${gold_rate[livello - 1] * avventurieri * esperienzaMissione}</td>
+            </tr>
+        </table>
     `;
+    document.getElementById('statistiche').innerHTML = rowHTML;
 }
