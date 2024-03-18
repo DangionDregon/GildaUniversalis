@@ -13,30 +13,7 @@ function calculateExperience() {
     var sessioni = parseInt(document.getElementById('sessioni').value);
     var livello = parseInt(document.getElementById('livello').value);
     
-    var exp_session;
-    switch (livello) {
-        case 1: exp_session = 300; break;
-        case 2: exp_session = 600; break;
-        case 3: exp_session = 1200; break;
-        case 4: exp_session = 1700; break;
-        case 5: exp_session = 3500; break;
-        case 6: exp_session = 4000; break;
-        case 7: exp_session = 5000; break;
-        case 8: exp_session = 6000; break;
-        case 9: exp_session = 7500; break;
-        case 10: exp_session = 9000; break;
-        case 11: exp_session = 10500; break;
-        case 12: exp_session = 11500; break;
-        case 13: exp_session = 13500; break;
-        case 14: exp_session = 15000; break;
-        case 15: exp_session = 18000; break;
-        case 16: exp_session = 20000; break;
-        case 17: exp_session = 25000; break;
-        case 18: exp_session = 27000; break;
-        case 19: exp_session = 30000; break;
-        case 20: exp_session = 40000; break;
-        default: exp_session = 0;
-    }
+    const exp_session = [300,600,1200,1700,3500,4000,5000,6000,7500,9000,10500,11500,13500,15000,18000,20000,25000,27000,30000,40000];
     
     var esperienza_max = avventurieri * sessioni * exp_session;
     document.getElementById('result').innerHTML = `
