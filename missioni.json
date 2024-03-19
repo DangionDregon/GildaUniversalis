@@ -1,42 +1,42 @@
 [
     {
-        "properietario": "proprietario1";
-        "stato": "privata";
-        "titolo": "titolo";
-        "descrizione": "questa è la descrizione";
-        "livello": 5;
-        "numero avventurieri": 2;
-        "numero di sessioni": 5;
-        "esperienza": 30000;
-        "difficoltà": 85.71;
-        "rating oggetti": 21;
-        "oro": 2100;
+        "properietario": "proprietario1",
+        "stato": "privata",
+        "titolo": "titolo",
+        "descrizione": "questa è la descrizione",
+        "livello": 5,
+        "numero avventurieri": 2,
+        "numero di sessioni": 5,
+        "esperienza": 30000,
+        "difficoltà": 85.71,
+        "rating oggetti": 21,
+        "oro": 2100
     },
     {
-        "properietario": "proprietario2";
-        "stato": "pubblica";
-        "titolo": "titoletto";
-        "descrizione": "questa NON è la descrizione";
-        "livello": 12;
-        "numero avventurieri": 4;
-        "numero di sessioni": 10;
-        "esperienza": 30000;
-        "difficoltà": 82.61;
-        "rating oggetti": 99;
-        "oro": 68400;
+        "properietario": "proprietario2",
+        "stato": "pubblica",
+        "titolo": "titoletto",
+        "descrizione": "questa NON è la descrizione",
+        "livello": 12,
+        "numero avventurieri": 4,
+        "numero di sessioni": 10,
+        "esperienza": 30000,
+        "difficoltà": 82.61,
+        "rating oggetti": 99,
+        "oro": 68400
     },
     {
-        "properietario": "proprietario1";
-        "stato": "pubblica";
-        "titolo": "titoloBello";
-        "descrizione": "questa è la descrizione, forse";
-        "livello": 2;
-        "numero avventurieri": 5;
-        "numero di sessioni": 3;
-        "esperienza": 9000;
-        "difficoltà": 100.00;
-        "rating oggetti": 6;
-        "oro": 1485;
+        "properietario": "proprietario1",
+        "stato": "pubblica",
+        "titolo": "titoloBello",
+        "descrizione": "questa è la descrizione, forse",
+        "livello": 2,
+        "numero avventurieri": 5,
+        "numero di sessioni": 3,
+        "esperienza": 9000,
+        "difficoltà": 100.00,
+        "rating oggetti": 6,
+        "oro": 1485
     }
 ]
         
