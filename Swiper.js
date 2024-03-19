@@ -10,6 +10,7 @@ class Swiper {
       loop: options.loop || false,
       autoplay: options.autoplay || false,
       autoplayInterval: options.autoplayInterval || 3000,
+      onSlideChange: options.onSlideChange || null
       // Altre opzioni possono essere aggiunte qui
     };
 
@@ -60,7 +61,13 @@ class Swiper {
 		  newIndex = 0;
 	  this.slides[this.currentIndex].style.display = 'none';
 	  this.slides[newIndex].style.display = 'block';
+	  var oldIndex = this.currentIndex;
 	  this.currentIndex = newIndex;
+
+    // Chiamata alla funzione onSlideChange se è stata fornita dall'utente
+    	if (this.options.onSlideChange && typeof this.options.onSlideChange === 'function') {
+      		this.options.onSlideChange(oldIndex, newIndex);
+	}
   }
 
   translateSlides(distance) {
