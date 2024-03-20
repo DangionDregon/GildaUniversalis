@@ -44,7 +44,7 @@ class Swiper {
   }
 
   handleTouchEnd() {
-	  if (Math.abs(this.touchDistance) > 50) { // Consideriamo un movimento significativo
+	  if (Math.abs(this.touchDistance) > 100) { // Consideriamo un movimento significativo
       	if (this.touchDistance > 0) {
         	this.changeCurrentSlide(this.currentIndex-1);
       	} else {
