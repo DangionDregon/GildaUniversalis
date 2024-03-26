@@ -197,17 +197,23 @@
 			onSlideChange: handleSlideChange
 		});
 		window.addEventListener('scroll', function() {
-    			var scrollPosition = window.scrollY;
-   			var image = document.getElementById('bg-image');
-    
-    			// Calcolo dell'opacità basata sulla posizione dello scrolling
-    			var opacity = 1 - scrollPosition / (window.innerHeight * 0.8); // Cambia 0.5 a tuo piacimento per regolare la velocità del fade
+    var scrollPosition = window.scrollY;
+    var image = document.getElementById('bg-image');
+    var deltaHeight = 200; // Altezza del delta prima che inizi la transizione, puoi modificare questo valore a tuo piacimento
 
-    			// Limitiamo l'opacità tra 0 e 1
-    			opacity = Math.min(1, Math.max(0.6, opacity));
+    // Calcola l'opacità solo se la posizione di scorrimento supera il deltaHeight
+    if (scrollPosition > deltaHeight) {
+        // Calcolo dell'opacità basata sulla posizione dello scrolling tenendo conto del deltaHeight
+        var opacity = 1 - (scrollPosition - deltaHeight) / (window.innerHeight * 0.5); // Cambia 0.5 a tuo piacimento per regolare la velocità del fade
+        // Limitiamo l'opacità tra 0.6 e 1
+        opacity = Math.min(1, Math.max(0.6, opacity));
+    } else {
+        // Se la posizione di scorrimento è inferiore alla soglia, l'opacità rimane a 1
+        opacity = 1;
+    }
 
-    			// Imposta l'opacità dell'immagine
-    			image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+    // Imposta l'opacità dell'immagine
+    image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
 		});
 	</script>
 </body>
