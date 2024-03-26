@@ -25,6 +25,15 @@
             		text-align: center;
   		}
 	    } 
+	    #bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    transition: opacity 0.5s ease; /* Transizione graduale dell'opacità */
+}
 
         .navbar {
             background-color: #444; /* Change color as needed */
@@ -112,6 +121,7 @@
             <!-- Contenuto scorrevole -->
             <div id ="home" class="swiper-slide">
 				<h2>HOME</h2>
+		    		<img id="bg-image" src="img.png" alt="Testo alternativo dell'immagine">
 			</div>
             <div id="crea_una_missionw" class="swiper-slide">
 				<!-- Your content for "Crea una missione" page goes here -->
@@ -161,6 +171,19 @@
 			autoplay: false, // Abilita l'autoplay degli slide
 			autoplayInterval: 5000, // Imposta l'intervallo di autoplay a 5 secondi
 			onSlideChange: handleSlideChange
+		});
+		window.addEventListener('scroll', function() {
+    			var scrollPosition = window.scrollY;
+   			var image = document.getElementById('bg-image');
+    
+    			// Calcolo dell'opacità basata sulla posizione dello scrolling
+    			var opacity = 1 - scrollPosition / (window.innerHeight * 0.5); // Cambia 0.5 a tuo piacimento per regolare la velocità del fade
+
+    			// Limitiamo l'opacità tra 0 e 1
+    			opacity = Math.min(1, Math.max(0, opacity));
+
+    			// Imposta l'opacità dell'immagine
+    			image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
 		});
 	</script>
 </body>
