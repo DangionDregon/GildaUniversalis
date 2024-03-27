@@ -6,7 +6,6 @@ class Swiper {
     this.touchStartX = 0;
     this.touchEndX = 0;
     this.touchDistance = 0;
-	this.moved = false;
     this.options = {
       loop: options.loop || false,
       autoplay: options.autoplay || false,
@@ -41,9 +40,10 @@ class Swiper {
   handleTouchMove(event) {
     this.touchEndX = event.touches[0].clientX;
     this.touchDistance = this.touchEndX - this.touchStartX;
-    if(this.touchDistance > 10 && this.moved) {
+    if(Math.abs(this.touchDistance) > 10) {
     	this.translateSlides(this.touchDistance);
-		this.moved = true;
+	} else {
+		this.translateSlides(0);
 	}
   }
 
@@ -56,7 +56,6 @@ class Swiper {
       	}
 	}// Ripristina la posizione se il movimento non è abbastanza lungo
     this.translateSlides(0);
-	this.moved = false;
   }
   
   changeCurrentSlide(newIndex) {
