@@ -40,7 +40,8 @@ class Swiper {
   handleTouchMove(event) {
     this.touchEndX = event.touches[0].clientX;
     this.touchDistance = this.touchEndX - this.touchStartX;
-    this.translateSlides(this.touchDistance);
+	if(this.touchDistance > 10)
+    	this.translateSlides(this.touchDistance);
   }
 
   handleTouchEnd() {
