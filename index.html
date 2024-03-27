@@ -109,6 +109,8 @@
         <h1>Benvenuti alla Gilda Universalis!</h1>
     </div>
 
+	<div id="navbar-placeholder"></div>
+
     <div class="navbar">
         <a input type="button" onclick="swiper.changeCurrentSlide(0)">Home</a>
         <a input type="button" onclick="swiper.changeCurrentSlide(1)">Crea una missione</a>
@@ -197,23 +199,38 @@
 			onSlideChange: handleSlideChange
 		});
 		window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY;
-    var image = document.getElementById('bg-image');
-    var deltaHeight = 200; // Altezza del delta prima che inizi la transizione, puoi modificare questo valore a tuo piacimento
+    			var scrollPosition = window.scrollY;
+    			var image = document.getElementById('bg-image');
+    			var deltaHeight = 200; // Altezza del delta prima che inizi la transizione, puoi modificare questo valore a tuo piacimento
 
-    // Calcola l'opacità solo se la posizione di scorrimento supera il deltaHeight
-    if (scrollPosition > deltaHeight) {
-        // Calcolo dell'opacità basata sulla posizione dello scrolling tenendo conto del deltaHeight
-        var opacity = 1 - (scrollPosition - deltaHeight) / (window.innerHeight * 0.5); // Cambia 0.5 a tuo piacimento per regolare la velocità del fade
-        // Limitiamo l'opacità tra 0.6 e 1
-        opacity = Math.min(1, Math.max(0.6, opacity));
-    } else {
-        // Se la posizione di scorrimento è inferiore alla soglia, l'opacità rimane a 1
-        opacity = 1;
-    }
+    			// Calcola l'opacità solo se la posizione di scorrimento supera il deltaHeight
+    			if (scrollPosition > deltaHeight) {
+        			// Calcolo dell'opacità basata sulla posizione dello scrolling tenendo conto del deltaHeight
+       				var opacity = 1 - (scrollPosition - deltaHeight) / (window.innerHeight * 0.5); // Cambia 0.5 a tuo piacimento per regolare la velocità del fade
+        			// Limitiamo l'opacità tra 0.6 e 1
+        			opacity = Math.min(1, Math.max(0.6, opacity));
+    			} else {
+        			// Se la posizione di scorrimento è inferiore alla soglia, l'opacità rimane a 1
+        			opacity = 1;
+    			}
 
-    // Imposta l'opacità dell'immagine
-    image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+    			// Imposta l'opacità dell'immagine
+    			image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+		});
+		window.addEventListener('scroll', function() {
+    			var headerHeight = document.querySelector('.header').offsetHeight;
+    			var navbar = document.getElementById('navbar');
+    			var navbarPlaceholder = document.getElementById('navbar-placeholder');
+    
+    			if (window.pageYOffset > headerHeight) {
+        			navbar.style.position = 'fixed';
+        			navbar.style.top = '0';
+        			navbarPlaceholder.style.height = navbar.offsetHeight + 'px'; // per mantenere il layout
+    			} else {
+        			navbar.style.position = 'relative';
+        			navbar.style.top = 'auto';
+       				navbarPlaceholder.style.height = '0';
+    			}
 		});
 	</script>
 </body>
