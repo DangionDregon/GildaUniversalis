@@ -221,21 +221,29 @@
     			// Imposta l'opacità dell'immagine
     			image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
 		});
+		window.addEventListener('DOMContentLoaded', function() {
+    			adjustNavbarPosition(); // Chiamiamo questa funzione quando la pagina è caricata
+		});
+
 		window.addEventListener('scroll', function() {
-    			var headerHeight = document.querySelector('.header').offsetHeight;
+    			adjustNavbarPosition(); // Chiamiamo questa funzione quando si verifica lo scroll
+		});
+
+		function adjustNavbarPosition() {
+			var headerHeight = document.querySelector('.header').offsetHeight;
     			var navbar = document.getElementById('navbar');
     			var navbarPlaceholder = document.getElementById('navbar-placeholder');
-    
+
     			if (window.pageYOffset > headerHeight) {
         			navbar.style.position = 'fixed';
         			navbar.style.top = '0';
-        			navbarPlaceholder.style.height = navbar.offsetHeight + 'px'; // per mantenere il layout
+        			navbarPlaceholder.style.height = navbar.offsetHeight + 'px';
     			} else {
         			navbar.style.position = 'relative';
         			navbar.style.top = 'auto';
-       				navbarPlaceholder.style.height = '0';
+        			navbarPlaceholder.style.height = '0';
     			}
-		});
+		}
 	</script>
 </body>
 </html>
