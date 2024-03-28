@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,30 +26,17 @@
             		text-align: center;
   		}
 	    } 
-	    .bg-img {
-		display: none;
-	    }
-        #bg-image-desktop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            transition: opacity 0.5s ease;
-        }
+	    #bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Aggiungi questa riga per far sì che l'immagine si adatti mantenendo le proporzioni */
+    z-index: -1;
+    transition: opacity 0.5s ease; /* Transizione graduale dell'opacità */
+}
 
-        #bg-image-mobile {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            transition: opacity 0.5s ease;
-        }
         .navbar {
             background-color: #444; /* Change color as needed */
             overflow: hidden;
@@ -140,8 +128,7 @@
 		<div id="swiper-container" class="swiper-container">
             <!-- Contenuto scorrevole -->
             <div id ="home" class="swiper-slide">
-                		<div id="bg-image-desktop" src="img.png" class="bg-img"></div>
-                		<div id="bg-image-mobile" src="img2.png" class="bg-img"></div>
+		    		<img id="bg-image" src="img.png" alt="Testo alternativo dell'immagine">
 		    		<div style="padding-top: 700px;"></div>
 		    		<p>Testo</p>
 		    		<p>Testo testo</p>
@@ -259,27 +246,6 @@
         			navbarPlaceholder.style.height = '0';
     			}
 		}
-		window.addEventListener('load', function() {
-    // Ottenere gli elementi HTML con gli ID specifici
-    var bgImageDesktop = document.getElementById('bg-image-desktop');
-    var bgImageMobile = document.getElementById('bg-image-mobile');
-
-    // Verificare se gli elementi sono stati trovati
-    if (bgImageDesktop && bgImageMobile) {
-        // Verificare la larghezza dello schermo
-        if (window.innerWidth <= 768) {
-            // Se lo schermo è di dimensioni ridotte, mostrare solo l'immagine mobile
-            bgImageDesktop.style.display = 'none';
-            bgImageMobile.style.display = 'block';
-        } else {
-            // Altrimenti, mostrare solo l'immagine desktop
-            bgImageDesktop.style.display = 'block';
-            bgImageMobile.style.display = 'none';
-        }
-    } else {
-        console.error('Impossibile trovare gli elementi con gli ID specificati.');
-    }
-});
 	</script>
 </body>
 </html>
