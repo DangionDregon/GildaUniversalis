@@ -266,9 +266,9 @@
 
     // Verificare se gli elementi sono stati trovati
     if (bgImageDesktop && bgImageMobile) {
-        // Verificare se lo schermo corrisponde a quello di un dispositivo mobile
-        if (window.matchMedia('(max-width: 768px)').matches) {
-            // Se sì, mostrare solo l'immagine mobile
+        // Verificare la larghezza dello schermo
+        if (window.innerWidth <= 768) {
+            // Se lo schermo è di dimensioni ridotte, mostrare solo l'immagine mobile
             bgImageDesktop.style.display = 'none';
             bgImageMobile.style.display = 'block';
         } else {
