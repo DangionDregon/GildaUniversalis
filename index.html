@@ -25,7 +25,7 @@
             		text-align: center;
   		}
 	    } 
-	    #bg-image {
+	    .background-image {
             position: fixed;
             top: 0;
             left: 0;
@@ -34,14 +34,17 @@
             object-fit: cover;
             z-index: -1;
             transition: opacity 0.5s ease;
-            background-image: url('img.png'); /* Immagine di sfondo predefinita per desktop */
-        }
-	    @media screen and (max-width: 768px) {
-            #bg-image {
-                background-image: url('img2.png'); /* Immagine di sfondo per dispositivi mobili */
-            }
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
+        #bg-image-desktop {
+            background-image: url('img.png'); /* Immagine di sfondo predefinita per desktop */
+        }
+
+        #bg-image-mobile {
+            background-image: url('tua_immagine_mobile.jpg'); /* Immagine di sfondo per dispositivi mobili */
+        }
         .navbar {
             background-color: #444; /* Change color as needed */
             overflow: hidden;
@@ -133,7 +136,8 @@
 		<div id="swiper-container" class="swiper-container">
             <!-- Contenuto scorrevole -->
             <div id ="home" class="swiper-slide">
-		    		<img id="bg-image" alt="Testo alternativo dell'immagine">
+                		<div id="bg-image-desktop" class="background-image"></div>
+                		<div id="bg-image-mobile" class="background-image"></div>
 		    		<div style="padding-top: 700px;"></div>
 		    		<p>Testo</p>
 		    		<p>Testo testo</p>
