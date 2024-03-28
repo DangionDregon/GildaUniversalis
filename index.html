@@ -36,6 +36,20 @@
     transition: opacity 0.5s ease;
 }
 
+/* Stili per l'immagine di sfondo predefinita */
+@media screen and (min-width: 769px) {
+    .background-image {
+        background-image: url('img.png'); /* Immagine di sfondo predefinita per desktop */
+    }
+}
+
+/* Stili per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .background-image {
+        background-image: url('tua_immagine_mobile.jpg'); /* Immagine di sfondo per dispositivi mobili */
+    }
+}
+
         .navbar {
             background-color: #444; /* Change color as needed */
             overflow: hidden;
@@ -127,7 +141,7 @@
 		<div id="swiper-container" class="swiper-container">
             <!-- Contenuto scorrevole -->
             <div id ="home" class="swiper-slide">
-		    		<img id="bg-image" src="img.png" alt="Testo alternativo dell'immagine">
+		    		<img id="bg-image" class="background-image" alt="Testo alternativo dell'immagine">
 		    		<div style="padding-top: 700px;"></div>
 		    		<p>Testo</p>
 		    		<p>Testo testo</p>
@@ -247,7 +261,7 @@
 		}
 		window.addEventListener('DOMContentLoaded', function() {
     var backgroundImage = document.getElementById('bg-image');
-    var smallScreenImagePath = 'tua_immagine_mobile.jpg';
+    var smallScreenImagePath = 'img2.png';
     var largeScreenImagePath = 'img.png';
 
     function setBgImageSrc() {
