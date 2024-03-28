@@ -36,20 +36,6 @@
     transition: opacity 0.5s ease;
 }
 
-/* Stili per l'immagine di sfondo predefinita */
-@media screen and (min-width: 769px) {
-    .background-image {
-        background-image: url('img.png'); /* Immagine di sfondo predefinita per desktop */
-    }
-}
-
-/* Stili per dispositivi mobili */
-@media screen and (max-width: 768px) {
-    .background-image {
-        background-image: url('img2.png'); /* Immagine di sfondo per dispositivi mobili */
-    }
-}
-
         .navbar {
             background-color: #444; /* Change color as needed */
             overflow: hidden;
@@ -141,7 +127,7 @@
 		<div id="swiper-container" class="swiper-container">
             <!-- Contenuto scorrevole -->
             <div id ="home" class="swiper-slide">
-		    		<img id="bg-image" alt="Testo alternativo dell'immagine">
+		    		<img id="bg-image" src="img.png" alt="Testo alternativo dell'immagine">
 		    		<div style="padding-top: 700px;"></div>
 		    		<p>Testo</p>
 		    		<p>Testo testo</p>
@@ -259,6 +245,26 @@
         			navbarPlaceholder.style.height = '0';
     			}
 		}
+		window.addEventListener('DOMContentLoaded', function() {
+    var backgroundImage = document.getElementById('bg-image');
+    var smallScreenImagePath = 'tua_immagine_mobile.jpg';
+    var largeScreenImagePath = 'img.png';
+
+    function setBgImageSrc() {
+        if (window.innerWidth <= 768) {
+            backgroundImage.style.backgroundImage = "url('" + smallScreenImagePath + "')";
+        } else {
+            backgroundImage.style.backgroundImage = "url('" + largeScreenImagePath + "')";
+        }
+    }
+
+    // Imposta l'immagine di sfondo all'avvio
+    setBgImageSrc();
+
+    // Aggiorna l'immagine di sfondo quando la finestra viene ridimensionata
+    window.addEventListener('resize', setBgImageSrc);
+});
+
 	</script>
 </body>
 </html>
