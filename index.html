@@ -208,6 +208,26 @@
     <script src="script.js"></script>
 	<script src="Swiper.js"></script>
 	<script>
+		function handleDeviceSize() {
+            var screenWidth = window.innerWidth;
+            var bgImage = document.getElementById('bg-image');
+            var bgImage2 = document.getElementById('bg-image2');
+
+            // Modifica il display delle immagini in base alla larghezza dello schermo
+            if (screenWidth <= 768) {
+                bgImage.style.display = 'none'; // Nascondi la prima immagine
+                bgImage2.style.display = 'block'; // Mostra la seconda immagine
+            } else {
+                bgImage.style.display = 'block'; // Mostra la prima immagine
+                bgImage2.style.display = 'none'; // Nascondi la seconda immagine
+            }
+        }
+
+        // Esegui la funzione quando la pagina è completamente caricata
+        window.addEventListener('load', handleDeviceSize);
+
+        // Esegui la funzione quando la dimensione della finestra viene modificata
+        window.addEventListener('resize', handleDeviceSize);
 		function handleSlideChange(oldIndex, newIndex) {
   			console.log('La slide è cambiata, nuova slide:', newIndex,', vecchia slide:', oldIndex);
   			// Aggiungi qui le istruzioni personalizzate che desideri eseguire quando la slide cambia
