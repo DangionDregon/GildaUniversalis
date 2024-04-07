@@ -242,6 +242,7 @@
 		window.addEventListener('scroll', function() {
     			var scrollPosition = window.scrollY;
     			var image = document.getElementById('bg-image');
+    			var image2 = document.getElementById('bg-image2');
     			var deltaHeight = 200; // Altezza del delta prima che inizi la transizione, puoi modificare questo valore a tuo piacimento
 
     			// Calcola l'opacità solo se la posizione di scorrimento supera il deltaHeight
@@ -257,6 +258,7 @@
 
     			// Imposta l'opacità dell'immagine
     			image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+    			image2.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
 		});
 		window.addEventListener('DOMContentLoaded', function() {
     			adjustNavbarPosition(); // Chiamiamo questa funzione quando la pagina è caricata
