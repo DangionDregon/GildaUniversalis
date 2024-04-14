@@ -245,6 +245,16 @@
     <script src="script.js"></script>
 	<script src="Swiper.js"></script>
 	<script>
+		var arrayElementi = [];
+
+        // Inizializzo l'array con i valori di getElementById
+        arrayElementi.push(document.getElementById("home-image2"));
+        arrayElementi.push(document.getElementById("cm-image2"));
+        arrayElementi.push(document.getElementById("bacheca-image2"));
+        arrayElementi.push(document.getElementById("risorse-image2"));
+
+
+		
 		function handleDeviceSize() {
             var screenWidth = window.innerWidth;
             var bgImage = document.getElementById('bg-image');
@@ -267,6 +277,8 @@
         window.addEventListener('resize', handleDeviceSize);
 		function handleSlideChange(oldIndex, newIndex) {
   			console.log('La slide è cambiata, nuova slide:', newIndex,', vecchia slide:', oldIndex);
+			arrayElementi[oldIndex].style.display = 'none';
+			arrayElementi[newIndex].style.display = 'block';
   			// Aggiungi qui le istruzioni personalizzate che desideri eseguire quando la slide cambia
 		}
 		var swiper = new Swiper('swiper-container', {
