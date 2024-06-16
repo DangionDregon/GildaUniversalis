@@ -285,6 +285,7 @@
         // Esegui la funzione quando la dimensione della finestra viene modificata
         window.addEventListener('resize', handleDeviceSize);
 		function handleSlideChange(oldIndex, newIndex) {
+			var screenWidth = window.innerWidth;
 			if (screenWidth <= 768) {
   				console.log('La slide è cambiata, nuova slide:', newIndex,', vecchia slide:', oldIndex);
 				arrayElementi[oldIndex].style.display = 'none';
