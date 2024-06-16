@@ -285,10 +285,12 @@
         // Esegui la funzione quando la dimensione della finestra viene modificata
         window.addEventListener('resize', handleDeviceSize);
 		function handleSlideChange(oldIndex, newIndex) {
-  			console.log('La slide è cambiata, nuova slide:', newIndex,', vecchia slide:', oldIndex);
-			arrayElementi[oldIndex].style.display = 'none';
-			arrayElementi[newIndex].style.display = 'block';
-  			// Aggiungi qui le istruzioni personalizzate che desideri eseguire quando la slide cambia
+			if (screenWidth <= 768) {
+  				console.log('La slide è cambiata, nuova slide:', newIndex,', vecchia slide:', oldIndex);
+				arrayElementi[oldIndex].style.display = 'none';
+				arrayElementi[newIndex].style.display = 'block';
+  				// Aggiungi qui le istruzioni personalizzate che desideri eseguire quando la slide cambia
+			}
 		}
 		var swiper = new Swiper('swiper-container', {
 			loop: true, // Abilita il loop degli slide
