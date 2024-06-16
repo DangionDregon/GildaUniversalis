@@ -258,15 +258,21 @@
 		function handleDeviceSize() {
             var screenWidth = window.innerWidth;
             var bgImage = document.getElementById('bg-image');
-            var bgImage2 = document.getElementById('home-image2');
+            var homeImage2 = document.getElementById('home-image2');
+            var cmImage2 = document.getElementById('cm-image2');
+            var bachecaImage2 = document.getElementById('bacheca-image2');
+            var risorseImage2 = document.getElementById('risorse-image2');
 
             // Modifica il display delle immagini in base alla larghezza dello schermo
             if (screenWidth <= 768) {
                 bgImage.style.display = 'none'; // Nascondi la prima immagine
-                bgImage2.style.display = 'block'; // Mostra la seconda immagine
+                homeImage2.style.display = 'block'; // Mostra la seconda immagine
             } else {
                 bgImage.style.display = 'block'; // Mostra la prima immagine
-                bgImage2.style.display = 'none'; // Nascondi la seconda immagine
+                homeImage2.style.display = 'none'; // Nascondi la seconda immagine
+                cmImage2.style.display = 'none'; // Nascondi la seconda immagine
+                bachecaImage2.style.display = 'none'; // Nascondi la seconda immagine
+                risorseImage2.style.display = 'none'; // Nascondi la seconda immagine
             }
         }
 
@@ -290,7 +296,10 @@
 		window.addEventListener('scroll', function() {
     			var scrollPosition = window.scrollY;
     			var image = document.getElementById('bg-image');
-    			var image2 = document.getElementById('bg-image2');
+    			var homeimage2 = document.getElementById('home-image2');
+    			var cmimage2 = document.getElementById('cm-image2');
+    			var bachecaimage2 = document.getElementById('bacheca-image2');
+    			var risorseimage2 = document.getElementById('risorse-image2');
     			var deltaHeight = 200; // Altezza del delta prima che inizi la transizione, puoi modificare questo valore a tuo piacimento
 
     			// Calcola l'opacità solo se la posizione di scorrimento supera il deltaHeight
@@ -306,7 +315,10 @@
 
     			// Imposta l'opacità dell'immagine
     			image.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
-    			image2.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+    			homeimage2.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+    			cmimage2.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+    			bachecaimage2.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
+    			risorseimage2.style.opacity = opacity.toFixed(2); // Impostiamo l'opacità con due decimali
 		});
 		window.addEventListener('DOMContentLoaded', function() {
     			adjustNavbarPosition(); // Chiamiamo questa funzione quando la pagina è caricata
